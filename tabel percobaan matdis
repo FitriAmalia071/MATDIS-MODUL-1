@@ -1,10 +1,60 @@
-| No. | Studi Kasus                         | Operator | Nilai Kondisi        | Hasil                             |
-| --- | ----------------------------------- | -------- | -------------------- | --------------------------------- |
-| 1   | Seleksi Kelulusan Peserta           | AND      | `True, True, True`   | **LULUS**                         |
-| 2   | Seleksi Penerima Beasiswa           | AND      | `True, True, False`  | **Tidak mendapat beasiswa**       |
-| 3   | Syarat Mengikuti Ujian              | AND      | `True, True, True`   | **Boleh mengikuti ujian**         |
-| 4   | Penerimaan Format File Tugas        | OR       | `False, True, False` | **Tugas diterima**                |
-| 5   | Pemberian Nilai Tambahan Mahasiswa  | OR       | `False, True, False` | **Mendapat nilai tambahan**       |
-| 6   | Verifikasi Akses Mengikuti Kegiatan | OR       | `False, False, True` | **Boleh mengikuti kegiatan**      |
-| 7   | Pemilihan Jalur Pendaftaran         | XOR      | `True, False`        | **Pilihan jalur VALID**           |
-| 8   | Validasi Metode Pembayaran          | XOR      | `True, True`         | **Metode pembayaran TIDAK VALID** |
+1. Tabel Kebenaran Seleksi Kelulusan Peserta 
+No | Aktif | Nilai Memenuhi | Prasyarat | Lulus
+1  | True  | True           | True      | True
+2  | True  | True           | False     | False
+3  | True  | False          | True      | False
+4  | False | True           | True      | False
+5  | False | False          | False     | False
+
+2. Tabel Kebenaran Seleksi Penerimaan Beasiswa 
+No | Nilai Tinggi | Aktif Kuliah | Prestasi | Beasiswa
+1  | True         | True         | True     | True
+2  | True         | True         | False    | False
+3  | True         | False        | True     | False
+4  | False        | True         | True     | False
+5  | False        | False        | False    | False
+
+3. Tabel Kebenaran Syarat Mengikuti Ujian
+No | Terdaftar | Sudah Bayar | Memenuhi Syarat | Boleh Ujian
+1  | True      | True        | True            | True
+2  | True      | True        | False           | False
+3  | True      | False       | True            | False
+4  | False     | True        | True            | False
+5  | False     | False       | False           | False
+
+4. Tabel Kebenaran Tugas Diterima 
+No | File PDF | File Word | File Gambar | Diterima
+1  | True     | True      | True        | True
+2  | True     | True      | False       | True
+3  | True     | False     | False       | True
+4  | False    | True      | False       | True
+5  | False    | False     | False       | False
+
+5. Tabel Kebenaran Nilai Tambahan 
+No | Aktif Organisasi | Ikut Lomba | Menjadi Panitia | Nilai Tambahan
+1  | True             | True       | True            | True
+2  | True             | False      | False           | True
+3  | False            | True       | False           | True
+4  | False            | False      | True            | True
+5  | False            | False      | False           | False
+
+6. Tabel Kebenaran Izin Masuk Kegiatan 
+No | Punya Kartu | Terdaftar Online | Mendapat Undangan | Boleh Masuk
+1  | True        | True             | True              | True
+2  | True        | False            | False             | True
+3  | False       | True             | False             | True
+4  | False       | False            | True              | True
+5  | False       | False            | False             | False
+
+7. Tabel Kebenaran Pilihan Jalur 
+No | Jalur Reguler | Jalur Prestasi | Pilihan Valid
+1  | True          | False          | True
+2  | False         | True           | True
+3  | True          | True           | False
+
+8. Tabel Kebenaran Metode Pembayaran 
+No | Bayar Cash | Bayar Transfer | Metode Valid
+1  | True       | False          | True
+2  | False      | True           | True
+3  | True       | True           | False
+
