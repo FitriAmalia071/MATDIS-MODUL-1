@@ -43,8 +43,6 @@ No | Punya Kartu | Terdaftar Online | Mendapat Undangan | Boleh Masuk
 1  | True        | True             | True              | True
 2  | True        | False            | False             | True
 3  | False       | True             | False             | True
-4  | False       | False            | True              | True
-5  | False       | False            | False             | False
 
 7. Tabel Kebenaran Pilihan Jalur 
 No | Jalur Reguler | Jalur Prestasi | Pilihan Valid
